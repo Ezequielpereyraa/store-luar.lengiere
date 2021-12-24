@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "standard"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "**/*.js",
+                "**/*.jsx"
+            ],
+            "rules": {
+                "react/prop-types": "off"
+            }
+        }
+    ],
+    "rules": {
+        "react/forbid-prop-types": 0
+    }
+}
