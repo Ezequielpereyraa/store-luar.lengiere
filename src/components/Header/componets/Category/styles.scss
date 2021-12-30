@@ -9,6 +9,7 @@
     cursor: pointer;
     font-size: 2rem;
     letter-spacing: 0.1rem;
+    border: 1px solid #6886aa;
   }
   input {
     display: none;
@@ -18,7 +19,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.25);
     color: #fedfe4;
-    border: 1px solid #fedfe4;
+    border: 3px solid #fedfe4;
     font-weight: bold;
     background-color: #6886aa;
   }

@@ -60,9 +60,10 @@ body {
   }
 }
 .productContainer {
-  margin: 1.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(41rem, 1fr));
+  place-items: center;
+  margin-top: 2rem;
 }
 
 .error {

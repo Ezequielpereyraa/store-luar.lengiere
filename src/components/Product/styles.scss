@@ -5,7 +5,7 @@
   border: 1px solid #ccc;
   align-items: center;
   justify-content: space-between;
-  height: 57rem;
+  height: auto;
   width: 40rem;
   border-radius: 20px;
   position: relative;
@@ -29,11 +29,11 @@
     text-align: center;
   }
   &__price {
-    color: rgb(101, 68, 245);
-    text-align: right;
+    color: #6886aa;
     font-size: 4rem;
+    margin-right: 1rem;
     &--consultar {
-      color: rgb(101, 68, 245);
+      color: #6886aa;
       letter-spacing: 0.2rem;
       grid-column: 2/-1;
     }
@@ -50,7 +50,7 @@
     letter-spacing: 0.1rem;
   }
   &__info {
-    display: grid;
-    place-items: center;
+    padding: 1rem;
+    text-align: right;
   }
 }
