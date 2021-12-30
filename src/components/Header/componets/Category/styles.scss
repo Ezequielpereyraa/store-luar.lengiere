@@ -3,9 +3,12 @@
   label {
     padding: 0.8rem 1.5rem;
     background-color: #fff;
-    color: #8c00ff;
+    color: #6886aa;
     font-weight: 500;
     border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
   }
   input {
     display: none;
@@ -14,8 +17,9 @@
     font-weight: bold;
     border-radius: 0.5rem;
     box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.25);
-    color: #8c00ff;
-    border: 1px solid #8c00ff;
+    color: #fedfe4;
+    border: 1px solid #fedfe4;
     font-weight: bold;
+    background-color: #6886aa;
   }
 }

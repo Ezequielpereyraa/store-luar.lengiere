@@ -56,7 +56,7 @@ const ProductList = ({ selectedCategory }) => {
         </div>
       )}
       {isLoad && !productsSearch.length && (
-        <h1 className="error">No se econtraron productos</h1>
+        <h1 className="error">No hay productos</h1>
       )}
     </>
   )

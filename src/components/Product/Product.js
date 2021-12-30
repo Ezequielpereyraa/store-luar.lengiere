@@ -4,7 +4,6 @@ import './styles.scss'
 import React from 'react'
 
 const Product = ({ product, price, description, quantity, unity, img }) => {
-  console.log({ img })
   return (
     <div className="product">
       {img && <img className="product__img" src={img} alt={product} />}
