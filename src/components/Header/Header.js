@@ -18,8 +18,6 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
     ({ Categories, mensaje }) => Categories && mensaje !== 'activo'
   )
 
-  console.log({ copyCategories })
-
   return (
     <div className="header">
       <img src={logo} alt="logo" className="header__logo" />

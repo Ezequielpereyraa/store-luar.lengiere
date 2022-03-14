@@ -3,22 +3,27 @@ import React, { useEffect, useState } from 'react'
 
 import getProducts from '../../utils/api'
 import DATA from '../../utils/data'
+import Cart from '../Cart/Cart'
+import Modal from '../Modal/Modal'
 import Search from '../Product/components/Search'
 import Product from '../Product/Product'
 
 const ProductList = ({ selectedCategory }) => {
+  const [cartProduct, setCartProduct] = useState([])
   const [products, setProducts] = useState([])
   const [searchName, setSearchName] = useState('')
   const [isLoad, setLoad] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
 
   const refProduct = [...products]
+
   useEffect(() => {
     getProducts(DATA.googleSheetsProducts).then(setProducts)
     setTimeout(() => {
       setLoad(true)
     }, 4000)
   }, [])
-  console.log({ products })
+
   const productSelectedCategory = () => {
     let productsFiltered = []
 
@@ -48,15 +53,27 @@ const ProductList = ({ selectedCategory }) => {
     <>
       <Search setSearchName={setSearchName} searchName={searchName} />
       {Boolean(productsSearch?.length) && (
-        // (
         <div className="productContainer">
           {productsSearch?.map((product, index) => (
-            <Product key={index} {...product} />
+            <Product
+              key={index}
+              setCartProduct={setCartProduct}
+              cartProduct={cartProduct}
+              {...product}
+            />
           ))}
         </div>
       )}
       {isLoad && !productsSearch.length && (
         <h1 className="error">No hay productos</h1>
+      )}
+      <Cart
+        cartProduct={cartProduct}
+        setOpenModal={setOpenModal}
+        openModal={openModal}
+      />
+      {openModal && (
+        <Modal cartProduct={cartProduct} setOpenModal={setOpenModal} />
       )}
     </>
   )
