@@ -29,7 +29,7 @@ const Product = ({
           <>
             <strong className="product__price">${price && price}</strong>
             <button className="product__button" onClick={() => addToCart()}>
-              Comprar
+             Agregar
             </button>
           </>
             )

@@ -73,7 +73,11 @@ const ProductList = ({ selectedCategory }) => {
         openModal={openModal}
       />
       {openModal && (
-        <Modal cartProduct={cartProduct} setOpenModal={setOpenModal} />
+        <Modal
+          cartProduct={cartProduct}
+          setOpenModal={setOpenModal}
+          setCartProduct={setCartProduct}
+        />
       )}
     </>
   )

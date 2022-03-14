@@ -2,7 +2,7 @@ import React from 'react'
 
 import './styles.scss'
 
-const Modal = ({ cartProduct, setOpenModal }) => {
+const Modal = ({ cartProduct, setOpenModal, setCartProduct }) => {
   const closeModal = () => setOpenModal(false)
   const send = (cartProduct) => {
     const items =
@@ -15,6 +15,10 @@ const Modal = ({ cartProduct, setOpenModal }) => {
     const totalText = `*Total: $${total}*`
     const returnTextWsp = [headerText, items, totalText].join('\n')
     return encodeURIComponent(returnTextWsp)
+  }
+  const deletedProduct = (name) => {
+    const copyProduct = [...cartProduct]
+    return setCartProduct(copyProduct.filter((item) => item.product !== name))
   }
 
   return (
@@ -29,6 +33,12 @@ const Modal = ({ cartProduct, setOpenModal }) => {
             <div key={product.product} className="cart-product">
               <p>{product.product}</p>
               <strong>${product.price}</strong>
+              <button
+                className="deletedButton"
+                onClick={() => deletedProduct(product.product)}
+              >
+                <img src="https://icongr.am/fontawesome/trash-o.svg?size=30&color=ffffff" />
+              </button>
             </div>
           ))}
       </div>
@@ -47,7 +57,7 @@ const Modal = ({ cartProduct, setOpenModal }) => {
         <a
           className="modal__button"
           _target="blank"
-          href={`https://wa.me/5493515325637?text=${send(cartProduct)}`}
+          href={`https://wa.me/5493517384470?text=${send(cartProduct)}`}
         >
           <img src="https://icongr.am/fontawesome/whatsapp.svg?size=24&color=ffffff" />
           <span>Completar Pedido</span>
