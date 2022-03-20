@@ -18,8 +18,8 @@ const App = () => {
   return (
     <div>
       <Header
-        setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
       />
       <ProductList selectedCategory={selectedCategory} />
       {openModal && <ModalWellcome />}

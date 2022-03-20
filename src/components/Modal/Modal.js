@@ -14,10 +14,12 @@ const Modal = ({ cartProduct, setOpenModal, setCartProduct }) => {
     const headerText = '*Hola!* Estoy interesada en los artículos:'
     const totalText = `*Total: $${total}*`
     const returnTextWsp = [headerText, items, totalText].join('\n')
+
     return encodeURIComponent(returnTextWsp)
   }
   const deletedProduct = (name) => {
     const copyProduct = [...cartProduct]
+
     return setCartProduct(copyProduct.filter((item) => item.product !== name))
   }
 
@@ -55,8 +57,8 @@ const Modal = ({ cartProduct, setOpenModal, setCartProduct }) => {
           </strong>
         </div>
         <a
-          className="modal__button"
           _target="blank"
+          className="modal__button"
           href={`https://wa.me/5493517384470?text=${send(cartProduct)}`}
         >
           <img src="https://icongr.am/fontawesome/whatsapp.svg?size=24&color=ffffff" />

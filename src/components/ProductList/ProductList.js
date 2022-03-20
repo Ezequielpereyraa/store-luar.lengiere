@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react'
 
 import getProducts from '../../utils/api'
@@ -33,6 +32,7 @@ const ProductList = ({ selectedCategory }) => {
           const filtrado = refProduct.filter(({ category }) =>
             category?.toLowerCase().includes(categorys.toLowerCase())
           )
+
           productsFiltered = [...productsFiltered, ...filtrado]
         }
       })
@@ -42,6 +42,7 @@ const ProductList = ({ selectedCategory }) => {
           { product } // recorro los productos
         ) => product?.toLowerCase().includes(searchName.toLowerCase())
       )
+
       productsFiltered = [...searchProduct]
     }
 
@@ -49,16 +50,17 @@ const ProductList = ({ selectedCategory }) => {
   }
 
   const productsSearch = productSelectedCategory()
+
   return (
     <>
-      <Search setSearchName={setSearchName} searchName={searchName} />
+      <Search searchName={searchName} setSearchName={setSearchName} />
       {Boolean(productsSearch?.length) && (
         <div className="productContainer">
           {productsSearch?.map((product, index) => (
             <Product
               key={index}
-              setCartProduct={setCartProduct}
               cartProduct={cartProduct}
+              setCartProduct={setCartProduct}
               {...product}
             />
           ))}
@@ -69,14 +71,14 @@ const ProductList = ({ selectedCategory }) => {
       )}
       <Cart
         cartProduct={cartProduct}
-        setOpenModal={setOpenModal}
         openModal={openModal}
+        setOpenModal={setOpenModal}
       />
       {openModal && (
         <Modal
           cartProduct={cartProduct}
-          setOpenModal={setOpenModal}
           setCartProduct={setCartProduct}
+          setOpenModal={setOpenModal}
         />
       )}
     </>

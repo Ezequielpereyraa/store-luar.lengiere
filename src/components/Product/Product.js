@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './styles.scss'
 
 import React from 'react'
@@ -18,9 +17,10 @@ const Product = ({
 
     return !isAdd && setCartProduct([...cartProduct, productSelected])
   }
+
   return (
     <div className="product">
-      {img && <img className="product__img" src={img} alt={product} />}
+      {img && <img alt={product} className="product__img" src={img} />}
       {product && <h4 className="product__title">{product}</h4>}
       <div className="product__info">
         {description && <p className={'product__description'}>{description}</p>}

@@ -1,33 +1,47 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "standard"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "standard"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "overrides": [
-        {
-            "files": [
-                "**/*.js",
-                "**/*.jsx"
-            ],
-            "rules": {
-                "react/prop-types": "off"
-            }
-        }
-    ],
-    "rules": {
-        "react/forbid-prop-types": 0
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "overrides": [
+    {
+      "files": ["**/*.js", "**/*.jsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
     }
+  ],
+  "rules": {
+    "no-console": "warn",
+    "import/order": ["warn", { "newlines-between": "always" }],
+    "react/prop-types": "off",
+    "react/self-closing-comp": "warn",
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "noSortAlphabetically": true,
+        "reservedFirst": true
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      }
+    ]
+  }
 }

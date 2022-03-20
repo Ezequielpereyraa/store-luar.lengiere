@@ -1,13 +1,16 @@
 import './styles.scss'
-import logo from '../../images/luar.jpg'
 import React, { useEffect, useState } from 'react'
 import { string, func } from 'prop-types'
+
+import logo from '../../images/luar.jpg'
 import getProducts from '../../utils/api'
 import DATA from '../../utils/data'
+
 import Category from './componets/Category'
 
 const Header = ({ selectedCategory, setSelectedCategory }) => {
   const [categories, setCategories] = useState([])
+
   useEffect(() => {
     getProducts(DATA.googleSheetsCategories).then(setCategories)
   }, [])
@@ -20,8 +23,7 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
 
   return (
     <div className="header">
-      <img src={logo} alt="logo" className="header__logo" />
-      {/* <h1 className="header__title">Lista de Precios</h1> */}
+      <img alt="logo" className="header__logo" src={logo} />
       {mensaje && mensaje.length > 0 && (
         <h2 className="header__hourse">{mensaje?.[0]?.Categories}</h2>
       )}

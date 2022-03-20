@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './styles.scss'
 
 import React from 'react'
@@ -6,6 +5,7 @@ import React from 'react'
 const Category = ({ category, setSelectedCategory, selectedCategory }) => {
   const handleChange = (e) => {
     const { checked, name, value } = e.target
+
     if (!selectedCategory.includes(name)) {
       setSelectedCategory([...selectedCategory, name])
     } else {
@@ -36,12 +36,12 @@ const Category = ({ category, setSelectedCategory, selectedCategory }) => {
         {category}
       </label>
       <input
-        id={category}
         className="categoryFilter"
-        type="checkbox"
-        onChange={handleChange}
+        id={category}
         name={category.trim()}
+        type="checkbox"
         value={category.trim()}
+        onChange={handleChange}
       />
     </div>
   )
