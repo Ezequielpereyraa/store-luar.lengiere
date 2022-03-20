@@ -11,12 +11,12 @@ const Product = ({
   cartProduct,
   setCartProduct
 }) => {
-  const addToCart = () => {
-    setCartProduct([...cartProduct, { price, product, img }])
-    localStorage.setItem(
-      'cart-item',
-      JSON.stringify([...cartProduct, { price, product, img }])
+  const addToCart = (productSelected) => {
+    const isAdd = cartProduct.some(
+      (cart) => cart.product === productSelected.product
     )
+
+    return !isAdd && setCartProduct([...cartProduct, productSelected])
   }
   return (
     <div className="product">
@@ -28,8 +28,11 @@ const Product = ({
           ? (
           <>
             <strong className="product__price">${price && price}</strong>
-            <button className="product__button" onClick={() => addToCart()}>
-             Agregar
+            <button
+              className="product__button"
+              onClick={() => addToCart({ price, product, img })}
+            >
+              Agregar
             </button>
           </>
             )

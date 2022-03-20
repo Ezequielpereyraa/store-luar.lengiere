@@ -18,8 +18,39 @@
   }
 }
 .modal__content {
+  @media (min-height: 741px) {
+    height: 75%;
+  }
   height: 67%;
   overflow-y: scroll;
+  &--wellcome {
+    padding: 4rem;
+    h1 {
+      font-size: 8rem;
+    }
+    h2 {
+      text-align: center;
+      color: #fedfe4;
+      font-size: 3rem;
+    }
+
+    p {
+      margin-top: 3rem;
+      font-weight: 400;
+      font-size: 3rem;
+      letter-spacing: 0.5px;
+      margin-bottom: auto;
+    }
+    .say {
+      font-weight: 600;
+      font-size: 3.5rem;
+      text-align: center;
+      letter-spacing: 1px;
+      color: #fedfe4;
+      border-bottom: 1px solid #fedfe4;
+      margin-top: 4rem;
+    }
+  }
 }
 .modal__button {
   all: unset;
@@ -51,10 +82,10 @@
 }
 .cart-product {
   display: grid;
-  grid-template-columns: 250px max-content 1fr;
+  width: 85%;
+  grid-template-columns: 1fr 65px 20px;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
   gap: 15px;
   margin: 10px auto;
 
